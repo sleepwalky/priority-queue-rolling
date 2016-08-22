@@ -1,6 +1,6 @@
 const Node = require('../src/node');
 const MaxHeap = require('../src/max-heap');
-
+//
 describe('MaxHeap', () => {
 	describe('#constructor', () => {
 		const h = new MaxHeap();
@@ -332,7 +332,16 @@ describe('MaxHeap', () => {
 			const lastInsertedNode = h.root.right;
 
 			const detached = h.detachRoot();
+
+			// h.parentNodes.forEach(myFunction);
+			// function myFunction(item, index) {
+			// console.log('index[' + index + ']' + item.priority);
+			// }
+			// console.log();
+
 			h.restoreRootFromLastInsertedNode(detached);
+
+			// h.parentNodes.forEach(myFunction);
 
 			expect(h.parentNodes.indexOf(root)).to.equal(-1);
 			expect(h.parentNodes[0]).to.equal(lastInsertedNode);

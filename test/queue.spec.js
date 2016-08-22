@@ -84,7 +84,15 @@ describe('PriorityQueue', () => {
 			const expectedData = [2, 7, 8, 6, 1, 5, 3, 4]
 
 			nodes.forEach(node => q.push(node.data, node.priority));
-			expectedData.forEach(d => expect(q.shift()).to.equal(d));
+
+			// q.heap.draw();
+
+			expectedData.forEach(d =>
+				{
+					// q.heap.draw();
+				expect(q.shift()).to.equal(d)
+			}
+			);
 		});
 
 		it('should handle items with same priority (return in the same order this items have been added)', () => {
